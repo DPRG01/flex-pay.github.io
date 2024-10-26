@@ -1,0 +1,916 @@
+body {
+    margin: 0; /* Elimina márgenes por defecto */
+    background-color: #1E1E1E; /* Fondo negro */
+    background-image: url('imagenes/1.png');
+    background-size: cover;
+    overflow-x: hidden;
+    background-repeat: no-repeat;
+    width: 100vw;
+    box-sizing: border-box;
+}
+:root{
+    --poppins: 'Poppins', sans-serif;
+    --open-sans: 'Open sans', sans-serif;
+    --naranja: hsl(29, 83%, 41%);
+    --blanco_titulo: #E9FFF7;
+    --plomo:#E5E6E5;
+    --plomo_parrafo_oscuro:#898ca9;
+
+
+    --padding-container:80px 0;
+
+}
+
+.barra_inicio {
+    font-size: 12px;
+    font-family: sans-serif;
+    /* Variables de color */
+    box-sizing: border-box;
+    -webkit-font-smoothing: inherit;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    height: 85px;
+    width: 90%; /* Ajusta este valor para hacer la barra más ancha o estrecha */
+    max-width: 1408px;
+    margin: 0 auto;
+    padding: 10px 16px;
+    /* Posicionamiento fijo centrado */
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000; /* Asegura que esté encima de otros elementos */
+    backdrop-filter: blur(16px);
+    background-color: rgba(217, 217, 217, 0.1);
+    border-radius: 40px;
+    opacity: 1;
+    /* Borde opcional */
+    --border-bottom-width: 1px;
+    --border-color: rgba(255, 255, 255, 0.4);
+    --border-left-width: 1px;
+    --border-right-width: 1px;
+    --border-style: solid;
+    --border-top-width: 1px;
+}
+
+
+.texto_barra {
+    margin-left: 10px;
+    font-size: 40px; /* Tamaño de fuente actualizado */
+    font-family: 'Poppins', sans-serif; /* Familia de fuentes actualizada */
+    font-weight: 600; /* Equivalente a SemiBold */
+    color: #DD8636; /* Color actualizado */
+}
+/* Estilos generales para el contenedor del QR y la descarga */
+.framer-1dc0k7u {
+    display: flex; /* Alinea el contenido horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    position: fixed; /* Fija la posición en la esquina inferior derecha */
+    bottom: 20px; /* Distancia del borde inferior */
+    right: 20px; /* Cambiado de left a right */
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px 30px; /* Aumentar espaciado interno para agrandar la barra verticalmente (padding superior e inferior) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+
+}
+
+
+
+/* Estilos para el texto de "Descargar app" */
+.framer-e1uzgd {
+    display: flex; /* Para que el texto se alinee correctamente */
+    flex-direction: column; /* Mantiene el texto en una columna */
+    justify-content: center; /* Centra verticalmente */
+    flex-shrink: 0; /* Evita que el contenedor del texto se reduzca */
+}
+
+.framer-text {
+    text-decoration: none; /* Elimina cualquier subrayado */
+    font-size: 20px; /* Tamaño de fuente adecuado */
+    font-weight: 700; /* Negrita */
+    text-align: center; /* Centra el texto */
+    color: black; /* Color por defecto */
+}
+
+.framer-text:active {
+    color: #A9A9A9; /* Color plomo al hacer clic */
+}
+
+a.framer-1dc0k7u {
+    text-decoration: none; /* Elimina el subrayado */
+    color: inherit; /* Mantiene el color del texto */
+}
+
+/* Estilos para el ícono QR */
+.framer-iSgFf {
+    height: 70px; /* Altura del QR */
+    width: 70px; /* Anchura del QR */
+    margin-left: 10px; /* Espaciado entre texto y QR */
+}
+
+.hero__main{
+    text-align: center;
+    color: black;
+    margin: 180px 0;
+
+}
+.hero__title{
+    font-family: var(--poppins);
+    font-size: 76px;
+    text-align: center;
+    color: var(--blanco_titulo);
+}
+.highlight {
+    color: var(--naranja) /* Cambia este valor al color que desees */
+}
+.hero__paragraph{
+    font-size: 25px; /* Cambia el tamaño según lo que necesites */
+    color: var(--plomo);
+    line-height: 1.2;
+    margin: 80px 0;
+
+}
+.cta {
+    font-family: var(--poppins);
+    font-size: 25px;
+    display: inline-block;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    padding: 16px 60px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.cta:active {
+    background-color: #d1d1d1; /* Cambia a otro color solo mientras se mantiene presionado */
+}
+.cta:hover {
+    background-color: #b8b3b3; /* Cambia a otro color cuando el cursor está encima */
+}
+
+.submenus {
+    display: flex;
+    gap: 20px;
+    text-align: center;
+    margin: 550px auto; /* Centra el contenedor horizontalmente */
+    max-width: 90%; /* Limita el ancho máximo para que no se salga de la pantalla */
+    height: 400px;
+    justify-content: center;
+}
+.submenus > * {
+    min-width: 350px; /* Cambia este valor para ajustar el ancho mínimo */
+
+    height: 400px; /* Ajusta la altura de los submenús aquí */
+
+    
+}
+
+.card {
+    background-color: #1A1818;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    margin: 0px 80px;
+}
+
+.card:hover {
+    transform: translateY(-50px);
+}
+
+.icono {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+.enlace {
+    color: #ff9900;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.enlace:hover {
+    color: #ffd700;
+}
+
+.flecha {
+    display: inline-block;
+    transition: transform 0.3s ease; /* Animación suave */
+}
+.enlace:hover .flecha {
+    transform: translateX(10px); /* Mueve la flecha hacia la derecha */
+    transition: transform 0.3s ease; /* Suaviza el movimiento */
+}
+.subtitulos2{
+    font-family: var(--poppins);
+    font-size: 32px;
+    text-align: center;
+    color:white;
+}
+
+.parrafo2{
+    font-family: var(--poppins);
+    font-size: 20px;
+    text-align: center;
+    color:var(--plomo_parrafo_oscuro);
+}
+
+.hero__main3 {
+    text-align: center;
+    margin: -380px auto;
+}
+
+.titulo3 {
+    font-family: var(--poppins);
+    font-size: 70px;
+    text-align: center;
+    color: white;
+}
+
+.cta3 {
+    font-family: var(--poppins);
+    font-size: 25px;
+    display: inline-block;
+    background-color: #FF9500;
+    color: white;
+    text-decoration: none;
+    padding: 16px 60px;
+    border-radius: 10px;
+    transition: transform 0.2s ease, background-color 0.3s ease; /* Suaviza la animación */
+}
+
+.cta3:hover {
+    background-color: #FF7E00; /* Cambio de color al pasar el mouse */
+    transform: scale(1.05); /* Aumenta un poco el tamaño */
+}
+
+.cta3:active {
+    transform: scale(0.95); /* Efecto de reducción al hacer clic */
+}
+
+.parrafo3 {
+    font-family: var(--poppins);
+    font-size: 20px;
+    text-align: center;
+    color: var(--plomo_parrafo_oscuro);
+    margin: 50px 0;
+}
+
+.hero__main4 {
+    text-align: center;
+    margin: 505px auto;
+}
+
+.titulo4{
+    font-family: var(--poppins);
+    font-size: 55px;
+    text-align: center;
+    color:#FF9500;
+}
+
+.parrafo4 {
+    font-family: var(--poppins);
+    font-size: 20px;
+    text-align: center;
+    color: #E5E6E5;
+    margin: -35px auto;
+
+}
+
+
+
+
+.flexpay-section1 {
+   
+    color: white; /* Texto en blanco */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    font-family: 'Poppins', sans-serif; /* Fuente como la de la imagen */
+    margin: -450px 130px;
+}
+
+.icon-text {
+    display: flex;
+    align-items: center;
+}
+
+.icon-container {
+    margin-right: 40px;
+    margin-top: -100px; /* Ajusta este valor según lo que necesites */
+
+    
+}
+
+.icon {
+    width: 50px; /* Tamaño del ícono */
+    height: 50px;
+}
+
+.text-container h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.p5 {
+    font-size: 16px;
+    margin-top: 16px;
+    color: #b5b5b5; /* Color de texto para descripción */
+}
+
+.cta-link {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    border-bottom: 1px solid white;
+    padding-bottom: 3px;
+    transition: all 0.3s ease;
+    margin: 10px 0px;
+}
+
+.cta-link .arrow {
+    margin-left: 10px;
+    font-size: 20px;
+    transition: margin-left 0.3s ease;
+}
+
+.cta-link:hover .arrow {
+    margin-left: 15px;
+}
+
+.cta-link:hover {
+    border-bottom: 1px solid #f39c12; /* Color del borde al pasar por encima */
+    color: #f39c12; /* Cambia el color del texto al pasar por encima */
+}
+
+
+
+.flexpay-section2 {
+   
+    color: white; /* Texto en blanco */
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 600px;
+    font-family: 'Poppins', sans-serif; /* Fuente como la de la imagen */
+    margin: 260px 1275px;
+}
+
+.icon-text2 {
+    display: flex;
+    align-items: center;
+}
+
+.icon-container2 {
+    margin-right: 40px;
+    margin-top: -100px; /* Ajusta este valor según lo que necesites */ 
+}
+
+.icon {
+    width: 50px; /* Tamaño del ícono */
+    height: 50px;
+}
+
+.text-container2 h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.p5_2 {
+    font-size: 16px;
+    margin-top: 16px;
+    color: #b5b5b5; /* Color de texto para descripción */
+}
+
+
+
+.flexpay-section3 {
+   
+    color: white; /* Texto en blanco */
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 600px;
+    font-family: 'Poppins', sans-serif; /* Fuente como la de la imagen */
+    margin: -100px 1275px;
+}
+
+.icon-text3 {
+    display: flex;
+    align-items: center;
+}
+
+.icon-container3 {
+    margin-right: 40px;
+    margin-top: -150px; /* Ajusta este valor según lo que necesites */ 
+}
+
+.icon {
+    width: 50px; /* Tamaño del ícono */
+    height: 50px;
+}
+
+.text-container3 h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    margin-top: -50px;
+}
+
+.p5_3 {
+    font-size: 16px;
+    margin-top: 16px;
+    color: #b5b5b5; /* Color de texto para descripción */
+}
+
+
+.flexpay-section4 {
+   
+    color: white; /* Texto en blanco */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    font-family: 'Poppins', sans-serif; /* Fuente como la de la imagen */
+    margin: -210px 130px;
+}
+
+.icon-text4 {
+    display: flex;
+    align-items: center;
+}
+
+.icon-container4 {
+    margin-right: 40px;
+    margin-top: -100px; /* Ajusta este valor según lo que necesites */
+
+    
+}
+
+.icon {
+    width: 50px; /* Tamaño del ícono */
+    height: 50px;
+}
+
+.text-container4 h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.p5_4 {
+    font-size: 16px;
+    margin-top: 16px;
+    color: #b5b5b5; /* Color de texto para descripción */
+}
+
+
+.text-container5 {
+    text-align: left;
+    min-width: 1000px;
+    margin: 400px 750px;
+
+}
+
+.titulo5{
+    font-family: var(--poppins);
+    font-size: 80px;
+
+    color:#FFFFFF;
+}
+.parrafo5{
+    font-family: var(--poppins);
+    font-size: 30px;
+    color: #898CA9;
+    margin: 70px 0;
+}
+/* Estilo del botón */
+.button {
+    font-family: var(--poppins);
+    font-size: 40px;
+    display: inline-block;
+    padding: 20px 40px;
+    margin-top: 20px;
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+/* Animación del botón al pasar el cursor */
+.button:hover {
+    background-color: #fff;
+    color: #1c1c1c;
+}
+ 
+.hero__main6 {
+    text-align: center;
+    margin: -200px auto;
+    min-width: 1000px;
+}
+
+.titulo6 {
+    font-family: var(--poppins);
+    font-size: 60px;
+    text-align: center;
+    color: white;
+}
+.parrafo6{
+    font-family: var(--poppins);
+    font-size: 25px;
+    color: #898CA9;
+    margin: 20px 0;
+}
+
+.cta-link6 {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--naranja);
+    font-size: 25px;
+    padding-bottom: 3px;
+    transition: all 0.3s ease;
+    margin: 10px 0px;
+    text-decoration: none;
+
+}
+
+.cta-link6 .arrow6 {
+    margin-left: 10px;
+    font-size: 20px;
+    transition: margin-left 0.3s ease;
+}
+
+.cta-link6:hover .arrow6 {
+    margin-left: 15px;
+}
+
+.cta-link6:hover {
+    color: white; /* Cambia el color del texto al pasar por encima */
+}
+
+
+
+
+.crypto-table_7 {
+    width: 60%; /* Reduce el ancho para que sea más pequeño */
+    max-width: 500px; /* Limita el ancho máximo para que no sea muy grande */
+    background-color: #262626;
+    border-collapse: collapse;
+    border-radius: 10px; /* Reduce el radio de la esquina si es necesario */
+    overflow: hidden;
+    margin: 250px auto; /* Ajusta el margen según sea necesario */
+}
+
+.crypto-table_7 th, .crypto-table_7 td {
+    padding: 5px 8px; /* Reduce el padding para disminuir la altura */
+    text-align: left;
+    min-width: 230px; /* Ajusta el ancho mínimo si es necesario */
+    min-height: 10px; /* Reduce la altura mínima para hacer la tabla más compacta */
+    background-color: #191B2C;
+}
+
+.p7{
+    font-family: var(--poppins);
+    font-size: 20px;
+    color: white;
+}
+
+.dinero7{
+    font-family: var(--poppins);
+    font-size: 20px;
+    color: white;
+}
+.crypto-table_7 th {
+    background-color: #1A1B23;
+    font-weight: normal;
+}
+
+.crypto-table_7 tr {
+    border-bottom: 1px solid #F2E983;
+}
+
+.crypto-table_7 tr:last-child {
+    border-bottom: none;
+}
+
+.crypto-table_7 td.symbol_7 {
+    color: #DD8636;
+    font-family: var(--poppins);
+    font-size: 20px;
+}
+
+.crypto-table_7 td.change-positive_7 {
+    color: #28a745;
+    font-family: var(--poppins);
+    font-size: 20px;
+}
+
+.crypto-table_7 td.change-negative_7 {
+    color: #dc3545;
+    font-family: var(--poppins);
+    font-size: 20px;
+}
+
+/* Estilos del botón */
+.crypto-table_7 .button_7 {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    font-family: var(--poppins);
+    font-size: 20px;
+}
+
+.crypto-table_7 .button_7:hover {
+    text-decoration: underline;
+}
+
+.crypto-table_7 .arrow_7 {
+    margin-left: 5px;
+}
+
+
+
+
+/* seccion 7-----------------------------------------------------------------------------------------------------------*/
+.hero__main7 {
+
+    margin: -110px 200px;
+}
+
+.titulo7 {
+    font-family: var(--poppins);
+    font-size: 70px;
+    color: white;
+}
+
+.cta7 {
+    font-family: var(--poppins);
+    font-size: 25px;
+    display: inline-block;
+    background-color: #FF9500;
+    color: white;
+    text-decoration: none;
+    padding: 16px 60px;
+    border-radius: 10px;
+    transition: transform 0.2s ease, background-color 0.3s ease; /* Suaviza la animación */
+}
+
+.cta7:hover {
+    background-color: #FF7E00; /* Cambio de color al pasar el mouse */
+    transform: scale(1.05); /* Aumenta un poco el tamaño */
+}
+
+.cta7:active {
+    transform: scale(0.95); /* Efecto de reducción al hacer clic */
+}
+
+.parrafo7 {
+    font-family: var(--poppins);
+    font-size: 20px;
+
+    color: var(--plomo_parrafo_oscuro);
+    margin: 40px 0;
+}
+
+/* seccion 8 ----------------------------------------------------------------------------*/
+.hero__main8 {
+    margin: 450px 200px;
+}
+
+.titulo8 {
+    font-family: var(--poppins);
+    font-size: 70px;
+    color: white;
+    margin: 170px 0;
+}
+
+.parrafo8 {
+    font-family: var(--poppins);
+    font-size: 20px;
+    color: #F5F5F5;
+    margin: 50px 0;
+
+}
+
+/* Estilos de los botones */
+.buttons8 {
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    align-items: center;     /* Centra los elementos verticalmente si es necesario */
+    gap: 75px;               /* Espacio entre los botones */
+    margin: 0 0;          /* Centra el contenedor de los botones */
+    width: fit-content;      /* Ajusta el ancho según el contenido */
+}
+
+.button-primary {
+    background-color: #FFBD59;
+    color: #000000;
+    padding: 20px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 20px;
+}
+
+.button-primary:hover {
+    background-color: #e69500;
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Añade sombra */
+}
+
+.button-secondary {
+    border: 2px solid #f0a500;
+    color: #ffffff;
+    padding: 20px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 20px;
+}
+
+.button-secondary:hover {
+    background-color: #f0a500;
+    color: #000;
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Añade sombra */
+}
+
+/* Estilo para la clase highlight8 */
+.highlight8 {
+    color: #FFBD59; /* Cambia este valor al color que desees */
+}
+
+/* seccion 9 ----------------------------------------------------------------------------*/
+  
+.icon-container_9 {
+    display: flex;
+    gap: 10px;
+    margin: -320px 0;
+    gap: 55px;    
+    justify-content: center; /* Centra horizontalmente */
+ 
+}
+
+.icon_9 img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.icon_9 img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+}
+
+/* seccion 10 ----------------------------------------------------------------------------*/
+
+.logo-container10 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 380px 50px;
+}
+
+.logo-icon10 {
+
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.logo-icon10 img {
+    width: 50px;
+    height: 50px;
+}
+
+.logo-text10 {
+    color: #f7931a;
+    font-size: 50px;
+    font-family: var(--poppins);
+    font-weight: bold;
+    margin: 0;
+}
+
+/* seccion 11 ----------------------------------------------------------------------------*/
+
+.link-container_11 {
+    display: flex;
+    gap: 200px;
+    margin: -360px 70px;
+}
+
+.column_11 {
+    display: flex;
+    flex-direction: column;
+    gap: 38px;
+}
+
+.section-title_11 {
+    color: #f7931a;
+    font-size: 22px;
+    margin: 0;
+    padding-bottom: 5px;
+    font-family: var(--poppins);
+}
+
+.link-item_11 {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s, text-decoration 0.3s;
+    font-family: var(--poppins);
+}
+
+.link-item_11:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* seccion 12 ----------------------------------------------------------------------------*/
+
+.publicidad_12{
+    margin: 28px 1175px;
+}
+.download-section_12 {
+    display: flex;
+
+    gap: 80px; /* Espacio entre los botones */
+    margin-bottom: 20px;
+}
+
+.download-button_12 {
+    width: 150px; /* Ajusta el tamaño de los botones */
+    height: auto;
+}
+
+.social-media-section_12 {
+    display: flex;
+
+    gap: 50px; /* Espacio entre los íconos */
+}
+
+.social-icon_12 img {
+    width: 40px; /* Tamaño de los íconos de redes sociales */
+    height: 40px;
+    border: 2px solid #ffffff; /* Color de borde */
+    border-radius: 50%; /* Hace los íconos redondos */
+    padding: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icon_12 img:hover {
+    transform: scale(1.2); /* Aumenta el tamaño al pasar el cursor */
+    box-shadow: 0 8px 15px rgba(185, 183, 167, 0.5); /* Sombra para resaltar el ícono */
+}
+
+.ultimo_parrafo{
+ margin: 0px 0px;
+
+}
+
+.ultimo_parrafo {
+    /* Ajusta aquí la posición en X e Y */
+    transform: translateX(70px) translateY(200px); /* Modifica estos valores según tus necesidades */
+    transition: transform 0.3s ease; /* Suaviza la transición */
+}
+
+
+.parrafo_ultimo{
+    font-family: var(--poppins);
+    font-size: 18px;
+    color: #676767;
+    margin: 50px 0;
+}
+
+.ultimo_parrafo1{
+    margin: 100px 0px;
+   
+   }
